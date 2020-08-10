@@ -31,7 +31,6 @@ def about():
     """Renders the about page."""
     return render_template(
         'about.html',
-        title='About',
-        year=datetime.now().year,
-        message='Your application description page.'
+        title='Professional Resume',
+        year=datetime.now().year
     )
