@@ -3,7 +3,7 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template
+from flask import render_template, request
 from ResumeWebsite import app
 
 @app.route('/')
@@ -34,3 +34,42 @@ def about():
         title='Professional Resume',
         year=datetime.now().year
     )
+@app.route('/apps')
+def apps():
+    """Renders the about page."""
+    return render_template(
+        'apps.html',
+        title='List of Webapps',
+        year=datetime.now().year
+    )
+
+@app.route('/weather')
+def weather():
+    """Renders the about page."""
+    return render_template(
+        'weather.html',
+        title='Weather',
+        year=datetime.now().year
+    )
+@app.route('/dice', methods=["POST","GET"])
+def dice():
+    """Renders the about page."""
+    return render_template(
+        'dice.html',
+        title='Roll some dice',
+        year=datetime.now().year
+    )
+
+@app.route('/store')
+def store():
+    """Renders the about page."""
+    return render_template(
+        'store.html',
+        title='Online Store',
+        year=datetime.now().year
+    )
+
+@app.route('/roll', methods=["POST"])
+def roll():
+    print(request.form['dice'])
+    return "hello"

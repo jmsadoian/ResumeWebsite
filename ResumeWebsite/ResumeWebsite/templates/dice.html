@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+    <h1>Roll some dice!</h1>
+    <p class="lead">A simple dice roller for one of my favorite past times, table-top games</p>
+    
+</div>
+
+
+<div id="diceContainer" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 border-right border-dark">Die</div>
+        <div class="col-sm-2 border-right border-dark">Times to roll</div>
+        <div class="col-sm-2 border-right border-dark">Dice values</div>
+        <div class="col-sm-2 border-right border-dark">Total</div>
+        <div class="col-sm-2 "></div>
+        
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- <input type="button" name="Add Dice" value="Add Die" onclick="addDice()" > -->
+        <button type="button" class="btn btn-secondary " name="Add Dice" onClick="addDice()">Add Dice</button>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/scripts/personal/dice.js"></script>
+{% endblock %}
